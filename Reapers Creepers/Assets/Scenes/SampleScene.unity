@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 200827823}
   - component: {fileID: 200827824}
   - component: {fileID: 200827825}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (23)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 259047639}
   - component: {fileID: 259047640}
   - component: {fileID: 259047641}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (15)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 314818738}
   - component: {fileID: 314818739}
   - component: {fileID: 314818740}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (11)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 337989706}
   - component: {fileID: 337989707}
   - component: {fileID: 337989708}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (8)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 380605978}
   - component: {fileID: 380605979}
   - component: {fileID: 380605980}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (10)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 418372661}
   - component: {fileID: 418372662}
   - component: {fileID: 418372663}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (7)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 428136701}
   - component: {fileID: 428136702}
   - component: {fileID: 428136703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -911,7 +911,7 @@ GameObject:
   - component: {fileID: 456971633}
   - component: {fileID: 456971634}
   - component: {fileID: 456971635}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (12)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1121,7 +1121,7 @@ GameObject:
   - component: {fileID: 620461198}
   - component: {fileID: 620461199}
   - component: {fileID: 620461200}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (13)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 682574106}
   - component: {fileID: 682574107}
   - component: {fileID: 682574108}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (17)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 684876035}
   - component: {fileID: 684876036}
   - component: {fileID: 684876037}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (19)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1454,7 +1454,7 @@ GameObject:
   - component: {fileID: 706710010}
   - component: {fileID: 706710011}
   - component: {fileID: 706710012}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 873561384}
   - component: {fileID: 873561385}
   - component: {fileID: 873561386}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (16)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1665,6 +1665,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!1 &919014414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 919014415}
+  m_Layer: 0
+  m_Name: firePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &919014415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919014414}
+  m_LocalRotation: {x: -0.35257185, y: 0.93578476, z: -0, w: 0}
+  m_LocalPosition: {x: -0.01419983, y: -0.046000052, z: -0.02220211}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1105794094}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -41.289}
 --- !u!1 &1061902485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,7 +1707,7 @@ GameObject:
   - component: {fileID: 1061902486}
   - component: {fileID: 1061902487}
   - component: {fileID: 1061902488}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1860,7 +1891,8 @@ Transform:
   m_LocalPosition: {x: -18, y: -3.82, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 919014415}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1879,8 +1911,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1655520776667032795, guid: b4f28a518c027b04e90e1f22fd58be62, type: 3}
   reticle: {fileID: 2027633268}
   cam: {fileID: 519420031}
-  laserLength: 50
   _isGrounded: 0
+  firePoint: {fileID: 919014415}
 --- !u!61 &1105794096
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1959,7 +1991,7 @@ GameObject:
   - component: {fileID: 1474345397}
   - component: {fileID: 1474345398}
   - component: {fileID: 1474345399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (21)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2070,7 +2102,7 @@ GameObject:
   - component: {fileID: 1495474682}
   - component: {fileID: 1495474683}
   - component: {fileID: 1495474684}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2181,7 +2213,7 @@ GameObject:
   - component: {fileID: 1579261481}
   - component: {fileID: 1579261482}
   - component: {fileID: 1579261483}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (22)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2292,7 +2324,7 @@ GameObject:
   - component: {fileID: 1627360161}
   - component: {fileID: 1627360162}
   - component: {fileID: 1627360163}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (20)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2403,7 +2435,7 @@ GameObject:
   - component: {fileID: 1740280416}
   - component: {fileID: 1740280417}
   - component: {fileID: 1740280418}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2514,7 +2546,7 @@ GameObject:
   - component: {fileID: 1775214422}
   - component: {fileID: 1775214423}
   - component: {fileID: 1775214424}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (9)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2625,7 +2657,7 @@ GameObject:
   - component: {fileID: 1785940395}
   - component: {fileID: 1785940396}
   - component: {fileID: 1785940397}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2791,7 +2823,7 @@ GameObject:
   - component: {fileID: 1922735727}
   - component: {fileID: 1922735728}
   - component: {fileID: 1922735729}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2902,7 +2934,7 @@ GameObject:
   - component: {fileID: 1989041357}
   - component: {fileID: 1989041358}
   - component: {fileID: 1989041359}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (14)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3097,7 +3129,7 @@ GameObject:
   - component: {fileID: 2060479215}
   - component: {fileID: 2060479216}
   - component: {fileID: 2060479217}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brick_Green_Plain (18)
   m_TagString: Ground
   m_Icon: {fileID: 0}
