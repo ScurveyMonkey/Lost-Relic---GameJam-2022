@@ -17,6 +17,7 @@ public class PointandShoot : MonoBehaviour
     void Update()
     {
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
+        
         reticle.transform.position = new Vector2(target.x, target.y + 1.15f); 
     }
 
