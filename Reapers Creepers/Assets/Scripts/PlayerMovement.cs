@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject projectilePrefab;
-    public GameObject reticle;
-    public Camera cam;
 
     private float _mSpeed = 5.0f;
     private float jumpForce = 5.5f;
     private float _maxWeaponRange = 10.0f;
     [SerializeField] bool _isGrounded;
-    [SerializeField] private Transform firePoint;
+
 
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 vertMovement;
-    private Vector2 lookDirection;
-    float lookAngle;
+
 
 
 
@@ -32,23 +28,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Come back to this Need the weapon to follow the mouse.
-        lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        lookDirection = new Vector2(lookDirection.x - transform.position.x, lookDirection.y - transform.position.y);
-        firePoint.rotation = Quaternion.Euler(0, 0, lookAngle);
- 
-
         Movement();
         Jumping();
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            shootBullet();
-        }
-
     }
-    
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -61,8 +45,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag(""))
-        _isGrounded = false;
+        if (collision.gameObject.CompareTag(""))
+            _isGrounded = false;
         Debug.Log("Jumping");
     }
 
@@ -95,14 +79,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void shootBullet()
-    {
-
-        var projectileInstance = Instantiate(projectilePrefab);
-        projectileInstance.transform.position = firePoint.position;
-        projectileInstance.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
-
-        projectileInstance.GetComponent<Rigidbody2D>().velocity = firePoint.right * _mSpeed;
-    }
-    
 }

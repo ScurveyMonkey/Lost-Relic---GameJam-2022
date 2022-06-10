@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6d08093ec80352428fc0e7b9f52dfc3, type: 3}
   m_Name: 
@@ -1674,6 +1674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 919014415}
+  - component: {fileID: 919014416}
   m_Layer: 0
   m_Name: firePoint
   m_TagString: Untagged
@@ -1688,14 +1689,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919014414}
-  m_LocalRotation: {x: -0.35257185, y: 0.93578476, z: -0, w: 0}
-  m_LocalPosition: {x: -0.01419983, y: -0.046000052, z: -0.02220211}
+  m_LocalRotation: {x: 0.00052356074, y: 0.9999999, z: 0, w: 0}
+  m_LocalPosition: {x: 0.062, y: -0.032, z: -0.02220211}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1105794094}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -41.289}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0.06}
+--- !u!114 &919014416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919014414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ef9ab615e2f2043aee9d57c6453b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1655520776667032795, guid: b4f28a518c027b04e90e1f22fd58be62, type: 3}
+  firePoint: {fileID: 919014415}
 --- !u!1 &1061902485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,11 +1923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b4b00a5e59edd4e81ed28c47299d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1655520776667032795, guid: b4f28a518c027b04e90e1f22fd58be62, type: 3}
-  reticle: {fileID: 2027633268}
-  cam: {fileID: 519420031}
   _isGrounded: 0
-  firePoint: {fileID: 919014415}
 --- !u!61 &1105794096
 BoxCollider2D:
   m_ObjectHideFlags: 0
