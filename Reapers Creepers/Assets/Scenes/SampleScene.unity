@@ -1710,6 +1710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1655520776667032795, guid: b4f28a518c027b04e90e1f22fd58be62, type: 3}
+  player: {fileID: 1105794092}
+  reticle: {fileID: 2027633270}
   firePoint: {fileID: 919014415}
 --- !u!1 &1061902485
 GameObject:
@@ -1924,6 +1926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isGrounded: 0
+  _facingRight: 0
 --- !u!61 &1105794096
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3121,9 +3124,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027633268}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.23, y: -2.91, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.20000002, y: 0.20000002, z: 0.20000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -7,8 +7,9 @@ public class PlayerMovement : MonoBehaviour
 
     private float _mSpeed = 5.0f;
     private float jumpForce = 5.5f;
-    private float _maxWeaponRange = 10.0f;
+    //private float _maxWeaponRange = 10.0f;
     [SerializeField] bool _isGrounded;
+    public bool _facingRight;
 
 
     private Rigidbody2D rb;
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Jumping");
     }
 
-    void Movement()
+    public void Movement()
     {
         //Movement of player
         movement = new Vector2(Input.GetAxis("Horizontal"), 0);
@@ -62,10 +63,12 @@ public class PlayerMovement : MonoBehaviour
         //Flipping the player sprite left or right
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyDown(KeyCode.A))
         {
+            _facingRight = false;
             this.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
         }
         if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyDown(KeyCode.D))
         {
+            _facingRight = true;
             this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         }
     }

@@ -5,26 +5,45 @@ using UnityEngine;
 public class Barrel : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public GameObject player;
+    public Transform reticle;
     private Vector2 lookDirection;
     float lookAngle;
     [SerializeField] private Transform firePoint;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
+        player.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
         lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        firePoint.rotation = Quaternion.Euler(0f, 0f, lookAngle);
+        reticle.position = new Vector2(transform.position.x + lookDirection.x, transform.position.y + lookDirection.y);
 
-        if (Input.GetMouseButtonDown(0))
+
+        if (lookDirection.x > 0)
         {
-            shootBullet();
+            lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+            firePoint.rotation = Quaternion.Euler(0f, 0f, lookAngle);
+            if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight == true)
+            {
+                shootBullet();
+            }
         }
+        if (lookDirection.x < 0)
+        {
+            lookAngle = Mathf.Atan2(-lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+            firePoint.rotation = Quaternion.Euler(0f, 0f, -lookAngle);
+            if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight != true)
+            {
+                shootBullet();
+            }
+        }
+
+
     }
     public void shootBullet()
     {
