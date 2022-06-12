@@ -36,6 +36,10 @@ public class Barrel : MonoBehaviour
                 projectilePrefab.GetComponent<Rigidbody2D>().velocity = firePoint.right * 10f;
                 active = true;
                 --ammo;
+                if (Input.GetMouseButtonDown(1))
+                {
+                    Debug.Log("Right button");
+                }
             }
         }
         if (lookDirection.x < 0)
