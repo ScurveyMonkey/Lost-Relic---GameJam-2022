@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 
     private float _mSpeed = 5.0f;
     private float jumpForce = 5.5f;
-    //private float _maxWeaponRange = 10.0f;
     [SerializeField] bool _isGrounded;
     public bool _facingRight;
 
@@ -46,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(""))
+        if (collision.gameObject.tag != "Ground")
             _isGrounded = false;
         Debug.Log("Jumping");
     }
