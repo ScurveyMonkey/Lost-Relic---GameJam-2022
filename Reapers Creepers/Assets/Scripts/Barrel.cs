@@ -5,6 +5,7 @@ using UnityEngine;
 public class Barrel : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    PlayerMovement playerController;
     public GameObject player;
     public Transform reticle;
     private Vector2 lookDirection;
@@ -16,7 +17,7 @@ public class Barrel : MonoBehaviour
 
     private void Start()
     {
-        player.GetComponent<PlayerMovement>();
+        playerController = player.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -31,8 +32,8 @@ public class Barrel : MonoBehaviour
             firePoint.rotation = Quaternion.Euler(0f, 0f, lookAngle);
             if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight == true && ammo > 0 && !active)
             {
-                GameObject firedBullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-                firedBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * 10f;
+                Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+                projectilePrefab.GetComponent<Rigidbody2D>().velocity = firePoint.right * 10f;
                 active = true;
                 --ammo;
             }
@@ -43,8 +44,8 @@ public class Barrel : MonoBehaviour
             firePoint.rotation = Quaternion.Euler(0f, 0f, -lookAngle);
             if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight != true && ammo > 0 && !active)
             {
-                GameObject firedBullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-                firedBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * 10f;
+                Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+                projectilePrefab.GetComponent<Rigidbody2D>().velocity = firePoint.right * 10f;
                 active = true;
                 --ammo;
             }
