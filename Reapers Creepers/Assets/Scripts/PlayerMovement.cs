@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 movement;
-    private Vector2 vertMovement;
 
 
 

@@ -1697,7 +1697,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5378101482987552599, guid: 5078a2b4f0dcd244f852a1d24a208859, type: 3}
   player: {fileID: 1105794092}
   reticle: {fileID: 2027633270}
-  ammo: 1
   active: 0
   firePoint: {fileID: 919014415}
 --- !u!1 &1061902485
@@ -1989,12 +1988,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105794092}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64905f93b5786894cb191a8bcecdd6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrel: {fileID: 919014416}
 --- !u!1 &1474345396
 GameObject:
   m_ObjectHideFlags: 0
