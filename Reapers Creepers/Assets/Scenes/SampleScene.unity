@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ef9ab615e2f2043aee9d57c6453b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1655520776667032795, guid: b4f28a518c027b04e90e1f22fd58be62, type: 3}
+  projectilePrefab: {fileID: 5378101482987552599, guid: 5078a2b4f0dcd244f852a1d24a208859, type: 3}
   player: {fileID: 1105794092}
   reticle: {fileID: 2027633270}
   ammo: 1
@@ -1825,6 +1825,7 @@ GameObject:
   - component: {fileID: 1105794096}
   - component: {fileID: 1105794095}
   - component: {fileID: 1105794098}
+  - component: {fileID: 1105794099}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1981,6 +1982,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1105794099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105794092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64905f93b5786894cb191a8bcecdd6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrel: {fileID: 919014416}
 --- !u!1 &1474345396
 GameObject:
   m_ObjectHideFlags: 0
