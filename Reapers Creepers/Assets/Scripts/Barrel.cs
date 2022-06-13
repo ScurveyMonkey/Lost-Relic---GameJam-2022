@@ -15,7 +15,6 @@ public class Barrel : MonoBehaviour
     private Vector2 lookDirection;
     private int ammo = 1;
     private float lookAngle;
-    private float distance;
 
 
 
@@ -37,12 +36,13 @@ public class Barrel : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight == true && ammo > 0 && !active)
             {
-                GameObject firedBullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-                firedBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * 10f;
-                distance = Vector2.Distance(firedBullet.transform.position, player.transform.position);
+                Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
                 active = true;
-                Debug.Log("Distance of bullet to player: " + distance);
                 --ammo;
+            }
+            if(active == true && projectilePrefab.transform.position.x > 10)
+            {
+                Destroy(projectilePrefab);
             }
 
 
@@ -54,8 +54,7 @@ public class Barrel : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight != true && ammo > 0 && !active)
             {
-                GameObject firedBullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-                firedBullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * 10f;
+                Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
                 active = true;
                 --ammo;
             }
@@ -63,7 +62,7 @@ public class Barrel : MonoBehaviour
         }
         if (ammo < 1)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetKeyDown(KeyCode.LeftControl))
             {
                 Debug.Log("Ammo added");
                 active = false;
