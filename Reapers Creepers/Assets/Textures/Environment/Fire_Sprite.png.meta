@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6315df1e4ee0a994880e38b187d1d58f
+guid: 0e26ed17aea792348b61c80957312d0a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton_Mage_Idle_0
+      name: Fire_Sprite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d9fecd022761804c8725882eb13af23
-      internalID: -159129587
+      spriteID: 03757c7da2dc57c4bb67ac017882cd45
+      internalID: -785500142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Mage_Idle_1
+      name: Fire_Sprite_1
       rect:
         serializedVersion: 2
         x: 16
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bf44370fd67e974c9085696ed7cbf4f
-      internalID: -1306732934
+      spriteID: 7948b0be2bb4ed64cb7a581484e88c81
+      internalID: 193349997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Mage_Idle_2
+      name: Fire_Sprite_2
       rect:
         serializedVersion: 2
         x: 32
@@ -172,8 +172,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37726c699d021d5468a9f1f09084f873
-      internalID: 1828776953
+      spriteID: 4b034500c0b8a944f9fbd7f4aa460072
+      internalID: -488378495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire_Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a0a7243df43504688e64c1068f49db
+      internalID: 1813254091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire_Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc6dc73f3842414190a5fe2218f1dad
+      internalID: -2101801204
       vertices: []
       indices: 
       edges: []
@@ -189,9 +231,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Skeleton_Mage_Idle_0: -159129587
-      Skeleton_Mage_Idle_1: -1306732934
-      Skeleton_Mage_Idle_2: 1828776953
+      Fire_Sprite_4: -2101801204
+      Fire_Sprite_0: -785500142
+      Fire_Sprite_2: -488378495
+      Fire_Sprite_3: 1813254091
+      Fire_Sprite_1: 193349997
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6315df1e4ee0a994880e38b187d1d58f
+guid: f4e6d3c4be1fe44409977816c6503253
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton_Mage_Idle_0
+      name: Reaper_Walk_Anim_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d9fecd022761804c8725882eb13af23
-      internalID: -159129587
+      spriteID: ba0887028d47fde4496d55c619183171
+      internalID: 1028730114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Mage_Idle_1
+      name: Reaper_Walk_Anim_1
       rect:
         serializedVersion: 2
         x: 16
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bf44370fd67e974c9085696ed7cbf4f
-      internalID: -1306732934
+      spriteID: 81a4e747adc747747abb73e6a71cfb4d
+      internalID: 2070111683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton_Mage_Idle_2
+      name: Reaper_Walk_Anim_2
       rect:
         serializedVersion: 2
         x: 32
@@ -172,8 +172,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37726c699d021d5468a9f1f09084f873
-      internalID: 1828776953
+      spriteID: 32504bf4df3f40243abf47edb25dc23e
+      internalID: 523924022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaper_Walk_Anim_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bcbda041effd2e41a41ced58bb4a462
+      internalID: 176814796
       vertices: []
       indices: 
       edges: []
@@ -189,9 +210,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Skeleton_Mage_Idle_0: -159129587
-      Skeleton_Mage_Idle_1: -1306732934
-      Skeleton_Mage_Idle_2: 1828776953
+      Reaper_Walk_Anim_3: 176814796
+      Reaper_Walk_Anim_1: 2070111683
+      Reaper_Walk_Anim_0: 1028730114
+      Reaper_Walk_Anim_2: 523924022
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

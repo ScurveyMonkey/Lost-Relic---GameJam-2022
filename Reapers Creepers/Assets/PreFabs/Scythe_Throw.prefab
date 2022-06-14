@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3738596769264361666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.87, y: -3.75, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,14 +127,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_Mass: 500
+  m_LinearDrag: 2.5
+  m_AngularDrag: 15
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!95 &5695583935625868403
 Animator:
@@ -180,6 +180,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c1e2d1ce898f74d8fcdb75416c4ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   rb: {fileID: 6810744128501692537}
-  player: {fileID: 0}

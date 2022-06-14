@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public float speed = 5.0f;
     public Rigidbody2D rb;
     private GameObject player;
+    private GameObject barrel;
+    public bool teleport;
     // Start is called before the first frame update
     void Start()
     {
         gameObject.tag = "Bullet";
         player = GameObject.Find("Player");
+        barrel = GameObject.Find("firePoint");
+
+        barrel.GetComponent<Barrel>();
+        player.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = transform.right * speed;
 
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Teleport");
             StartCoroutine(TeleportPlayer());
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = transform.right * speed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,10 +45,10 @@ public class BulletController : MonoBehaviour
 
     IEnumerator TeleportPlayer()
     {
-        //Debug.Log("Teleport");
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.10f);
         player.transform.position = gameObject.transform.position;
+        barrel.GetComponent<Barrel>().ammo = 1;
+        barrel.GetComponent<Barrel>().scytheActive = false;
         Destroy(gameObject);
-
     }
 }
