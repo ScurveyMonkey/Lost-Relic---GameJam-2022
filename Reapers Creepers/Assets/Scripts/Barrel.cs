@@ -9,6 +9,7 @@ public class Barrel : MonoBehaviour
     public GameObject player;
     public Transform reticle;
     public bool scytheActive;
+    private bool dead;
 
     //private
     [SerializeField] private Transform firePoint;
@@ -27,6 +28,7 @@ public class Barrel : MonoBehaviour
     {
         lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         reticle.position = new Vector2(transform.position.x + lookDirection.x, transform.position.y + lookDirection.y);
+        dead = player.GetComponent<PlayerMovement>()._dead;
 
 
         if (lookDirection.x > 0)
@@ -34,7 +36,7 @@ public class Barrel : MonoBehaviour
             lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.Euler(0f, 0f, lookAngle);
 
-            if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight == true && ammo > 0 && !scytheActive)
+            if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight == true && ammo > 0 && !scytheActive && dead == false)
             {
                 Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
                 scytheActive = true;
@@ -49,7 +51,7 @@ public class Barrel : MonoBehaviour
             lookAngle = Mathf.Atan2(-lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.Euler(0f, 0f, -lookAngle);
 
-            if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight != true && ammo > 0 && !scytheActive)
+            if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight != true && ammo > 0 && !scytheActive && dead == false)
             {
                 Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
                 scytheActive = true;

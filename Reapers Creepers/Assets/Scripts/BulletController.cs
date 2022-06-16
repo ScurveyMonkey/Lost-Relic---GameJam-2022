@@ -24,7 +24,7 @@ public class BulletController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && player.GetComponent<PlayerMovement>()._dead == false)
         {
             StartCoroutine(TeleportPlayer());
         }

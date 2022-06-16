@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private Animator _anim;
+    public GameManager gameManager;
 
 
 
@@ -31,8 +32,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        Jumping();
+        if (_dead == false)
+        {
+            Movement();
+            Jumping();
+        }
         if (_dead == true)
         {
             _anim.SetBool("_Dead", true);
@@ -45,8 +49,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             _isGrounded = true;
-            Debug.Log("You're on the ground");
-            // add animation for walking
         }
     }
 
@@ -62,14 +64,14 @@ public class PlayerMovement : MonoBehaviour
         {
             //_anim.SetBool("_Dead", true);
             _dead = true;
+            Debug.Log("Dead" + _dead);
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Ground")
+        if (collision.gameObject.tag != "Ground" && _dead == false)
             _isGrounded = false;
-        Debug.Log("Jumping");
     }
 
     public void Movement()
@@ -81,19 +83,19 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Flipping the player sprite left or right
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyDown(KeyCode.A) && _dead == false)
         {
             _facingRight = false;
             this.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
             _anim.SetFloat("_mSpeed",1);
         }
-        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyDown(KeyCode.D) && _dead == false)
         {
             _facingRight = true;
             this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
             _anim.SetFloat("_mSpeed", 1);
         }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) && _dead == false)
         {
             _anim.SetFloat("_mSpeed", 0);
         }
