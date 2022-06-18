@@ -9,6 +9,9 @@ TagManager:
   - Barrel
   - Soul
   - Spikes
+  - Sensor
+  - Fire
+  - Platform
   layers:
   - Default
   - TransparentFX

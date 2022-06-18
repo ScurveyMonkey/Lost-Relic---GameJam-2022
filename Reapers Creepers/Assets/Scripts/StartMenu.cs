@@ -9,6 +9,7 @@ public class StartMenu : MonoBehaviour
 {
     public Button playGame;
     public Button credits;
+    public Button exit;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,12 @@ public class StartMenu : MonoBehaviour
 
     public void Credits()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(6);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Game is exiting");
     }
 }

@@ -9,56 +9,76 @@ public class Barrel : MonoBehaviour
     public GameObject player;
     public Transform reticle;
     public bool scytheActive;
-    private bool dead;
+    public int ammo = 1;
+
 
     //private
     [SerializeField] private Transform firePoint;
     private Vector2 lookDirection;
-    public int ammo = 1;
+    private bool dead;
     private float lookAngle;
 
 
 
     private void Start()
     {
+        player.GetComponent<PlayerMovement>()._facingRight = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        reticle.position = new Vector2(transform.position.x + lookDirection.x, transform.position.y + lookDirection.y);
         dead = player.GetComponent<PlayerMovement>()._dead;
-
-
-        if (lookDirection.x > 0)
+        if (dead == false)
         {
-            lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-            firePoint.rotation = Quaternion.Euler(0f, 0f, lookAngle);
-
-            if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight == true && ammo > 0 && !scytheActive && dead == false)
+            if (ammo > 0)
             {
-                Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-                scytheActive = true;
-                --ammo;
+                if (lookDirection.x > 0)
+                {
+                    if (player.GetComponent<PlayerMovement>()._facingRight == true)
+                    {
+                        if (Input.GetMouseButtonDown(0) && !scytheActive)
+                        {
+                            ScytheThrow();
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    if (player.GetComponent<PlayerMovement>()._facingRight == false)
+                    {
+                        if (Input.GetMouseButtonDown(0) && !scytheActive)
+                        {
+                            ScytheThrow();
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
             }
-
-
-
         }
-        if (lookDirection.x < 0)
-        {
-            lookAngle = Mathf.Atan2(-lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-            firePoint.rotation = Quaternion.Euler(0f, 0f, -lookAngle);
 
-            if (Input.GetMouseButtonDown(0) && player.GetComponent<PlayerMovement>()._facingRight != true && ammo > 0 && !scytheActive && dead == false)
-            {
-                Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-                scytheActive = true;
-                --ammo;
-            }
 
-        }
+    }
+    private void FixedUpdate()
+    {
+        lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+        firePoint.rotation = Quaternion.Euler(0f, 0f, lookAngle);
+        reticle.position = new Vector2(transform.position.x + lookDirection.x, transform.position.y + lookDirection.y);
+    }
+
+    void ScytheThrow()
+    {        
+        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        scytheActive = true;
+        --ammo;
     }
 
 }

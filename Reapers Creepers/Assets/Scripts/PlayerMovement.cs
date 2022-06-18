@@ -50,21 +50,32 @@ public class PlayerMovement : MonoBehaviour
         {
             _isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Soul"))
+        if (collision.gameObject.CompareTag("Soul") && _dead == false)
         {
             _soulCaptured = true;
             Destroy(collision.gameObject);
         }
-
+        //traps
         if (collision.gameObject.CompareTag("Spikes"))
         {
-            //_anim.SetBool("_Dead", true);
             _dead = true;
-            Debug.Log("Dead" + _dead);
+        }
+        if (collision.gameObject.CompareTag("Fire"))
+        {
+            _dead = true;
+        }
+        if (collision.gameObject.CompareTag("Sensor"))
+        {
+            _dead = true;
+            Destroy(gameObject, 2f);
         }
     }
 
