@@ -12,10 +12,16 @@ public class PlayerMovement : MonoBehaviour
     public bool _soulCaptured;
     public bool _dead;
 
+    public AudioClip playerJump;
+    public AudioClip playerDeath;
+    public AudioClip playerWalk;
+    public AudioClip playerWin;
+
 
     private Rigidbody2D rb;
     private Vector2 movement;
     private Animator _anim;
+    private AudioSource playerSource;
     public GameManager gameManager;
 
 
@@ -27,12 +33,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        playerSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_dead == false)
+        if (_dead == false && _soulCaptured == false)
         {
             Movement();
             Jumping();
@@ -41,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _anim.SetBool("_Dead", true);
         }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -50,31 +56,33 @@ public class PlayerMovement : MonoBehaviour
         {
             _isGrounded = true;
         }
-        if (collision.gameObject.CompareTag("Platform"))
-        {
-
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Soul") && _dead == false)
+        if (collision.gameObject.CompareTag("Soul") && !_dead)
         {
             _soulCaptured = true;
+            _isGrounded = false;
+            playerSource.PlayOneShot(playerWin);
             Destroy(collision.gameObject);
         }
+
         //traps
-        if (collision.gameObject.CompareTag("Spikes"))
+        if (collision.gameObject.CompareTag("Spikes") && !_dead)
         {
             _dead = true;
+            playerSource.PlayOneShot(playerDeath);
         }
-        if (collision.gameObject.CompareTag("Fire"))
+        if (collision.gameObject.CompareTag("Fire") && !_dead)
         {
             _dead = true;
+            playerSource.PlayOneShot(playerDeath);
         }
-        if (collision.gameObject.CompareTag("Sensor"))
+        if (collision.gameObject.CompareTag("Sensor") && !_dead)
         {
             _dead = true;
+            playerSource.PlayOneShot(playerDeath);
             Destroy(gameObject, 2f);
         }
     }
@@ -89,9 +97,9 @@ public class PlayerMovement : MonoBehaviour
     {
         //Movement of player
         movement = new Vector2(Input.GetAxis("Horizontal"), 0);
+        
         var xMovement = movement.x * _mSpeed * Time.deltaTime;
         this.transform.Translate(new Vector3(xMovement, 0), Space.World);
-
 
         //Flipping the player sprite left or right
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyDown(KeyCode.A) && _dead == false)
@@ -106,10 +114,6 @@ public class PlayerMovement : MonoBehaviour
             this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
             _anim.SetFloat("_mSpeed", 1);
         }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) && _dead == false)
-        {
-            _anim.SetFloat("_mSpeed", 0);
-        }
     }
 
     void Jumping()
@@ -117,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            playerSource.PlayOneShot(playerJump);
             _isGrounded = false;
         }
     }

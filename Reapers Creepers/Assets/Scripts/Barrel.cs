@@ -15,6 +15,7 @@ public class Barrel : MonoBehaviour
     //private
     [SerializeField] private Transform firePoint;
     private Vector2 lookDirection;
+    private AudioSource audioSource;
     private bool dead;
     private float lookAngle;
 
@@ -23,6 +24,7 @@ public class Barrel : MonoBehaviour
     private void Start()
     {
         player.GetComponent<PlayerMovement>()._facingRight = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,7 +55,7 @@ public class Barrel : MonoBehaviour
                     {
                         if (Input.GetMouseButtonDown(0) && !scytheActive)
                         {
-                            ScytheThrow();
+                            ScytheThrow();   
                         }
                     }
                     else
@@ -78,6 +80,7 @@ public class Barrel : MonoBehaviour
     {        
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         scytheActive = true;
+        audioSource.Play();
         --ammo;
     }
 

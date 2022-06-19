@@ -9,10 +9,10 @@ public class CreditsMenu : MonoBehaviour
 {
     public Button backButton;
     public Button playGame;
+    private AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -29,5 +29,6 @@ public class CreditsMenu : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene(0);
+
     }
 }

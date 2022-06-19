@@ -12,6 +12,8 @@ public class BulletController : MonoBehaviour
     private GameObject player;
     private GameObject barrel;
 
+    public Transform barrelTarget;
+
     // Start is called before the first frame update
     void Start()
     {

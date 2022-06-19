@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (player.GetComponent<PlayerMovement>()._dead == true)
+        if (player.GetComponent<PlayerMovement>()._dead == true && player.GetComponent<PlayerMovement>()._soulCaptured == false)
         {
             GameOver();
         }
